@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Hmpg.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <ul class="nav-list">
+            <li>
+              <ul>
+                <li class="nav-logo">
+                  <img src="logo.png" class="alogo" />
+                  <button class="btn" id="nav-toggle">
+                    <i class="fa fa-bars"></i>
+                  </button>
+                </li>
+
+                <li class="nav-link">
+                  About<i class="fa fa-chevron-up"></i>
+                  <ul class="nav-drop">
+                    <li>Our Team</li>
+                    <li>Our Process</li>
+                    <li>History</li>
+                  </ul>
+                </li>
+
+                <li class="nav-link">
+                  Work<i class="fa fa-chevron-up"></i>
+                  <ul class="nav-drop">
+                    <li>Portfolio</li>
+                    <li>Showcase</li>
+                  </ul>
+                </li>
+
+                <li class="nav-link">Contact</li>
+              </ul>
+            </li>
+            <li>
+              <ul class="sign-in-up">
+                <li class="nav-item">
+                  <button
+                    class="btn1"
+                    onclick="window.location.href = 'Login.html';"
+                  >
+                    Login
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="btn"
+                    onclick="window.location.href = 'Signup.html';"
+                  >
+                    Sign up
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <img src="HPimg.png" class="Hpimage" />
+      <div class="page2">
+        <h1 class="page2heading">Just Report It!</h1>
+        <div class="buttonss">
+          <button class="b1" onClick="myFunction()">Biowaste</button>
+          <button class="b1" onClick="myFunction2()">Biomedical</button>
+          <button class="b1" onClick="myFunction3()">Construction</button>
+          <button class="b1" onClick="myFunction4()">EWaste</button>
+          <button class="b1" onClick="myFunction5()">Hazardous</button>
+        </div>
+
+        <div class="content">
+          <div id="first" class="winimg">
+            <img src="biowaste.jpg" />
+          </div>
+          <div id="second" class="winimg">
+            <img src="biomedicalwaste.jpg" />
+          </div>
+          <div id="third" class="winimg">
+            <img src="Constructionwaste.jpg" />
+          </div>
+          <div id="fourth" class="winimg">
+            <img src="Ewaste.jpg" />
+          </div>
+          <div id="fifth" class="winimg">
+            <img src="hazardouswaste.jpg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="columncontainer">
+        <!-- First column for text content -->
+        <div class="fcolumn">
+          <h1>Remove the waste 100% with one click</h1>
+          <p>
+            This is where your text content goes. You can add paragraphs,
+            headings, and more here.
+          </p>
+        </div>
+
+        <!-- Second column for the image -->
+        <div class="fcolumn">
+          <div class="truckimg">
+            <img src="GarbageTruck.png" alt="Your Image" width="500" />
+          </div>
+        </div>
+      </div>
+
+      <div class="threecards">
+        <div class="cardcontainer">
+          <div class="cardcolumn">
+            <div class="cardrectangle">
+              <img src="Man1.png" alt="review Image" width="250" />
+              <p class="review">
+                "Effortlessly report trash problems and watch them disappear. A
+                must-have for community cleanliness!"
+              </p>
+            </div>
+          </div>
+          <div class="cardcolumn">
+            <div class="cardrectangle">
+              <img src="Man2.png" alt="review Image" width="250" />
+              <p class="review">
+                "Snap, report, gone! An efficient solution to tackle illegal
+                waste dumping."
+              </p>
+            </div>
+          </div>
+          <div class="cardcolumn">
+            <div class="cardrectangle">
+              <img src="Girl1.png" alt="review Image" width="250" />
+              <p class="review">
+                "Revolutionized waste management – the power to clean up your
+                surroundings in your pocket!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="Hmpg.js"></script>
+  </body>
+
+  <footer class="bg-dark text-center text-white">
+    <script
+      src="https://kit.fontawesome.com/86cc0ca67e.js"
+      crossorigin="anonymous"
+    ></script>
+    <div class="footer-icons">
+      <button type="button" class="btn icon-button">
+        <i class="fa-brands fa-twitter"></i>
+      </button>
+      <button type="button" class="btn icon-button">
+        <i class="fa-brands fa-linkedin"></i>
+      </button>
+      <button type="button" class="btn icon-button">
+        <i class="fa-brands fa-threads"></i>
+      </button>
+      <button type="button" class="btn icon-button">
+        <i class="fa-brands fa-facebook"></i>
+      </button>
+      <button type="button" class="btn icon-button">
+        <i class="fa-brands fa-instagram"></i>
+      </button>
+    </div>
+    © 2023 WasteWipe. All rights reserved.
+  </footer>
+</html>
