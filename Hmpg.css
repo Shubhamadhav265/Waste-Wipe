@@ -1,0 +1,472 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ul,
+li {
+  list-style: none;
+  display: flex ;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 16px #e1e5ee;
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+nav .nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+nav .nav-list .nav-logo {
+  /* margin-right: auto; */
+  display: flex;
+  /* justify-content: space between; */
+  align-items: center;
+}
+.alogo{
+  height: 4rem;
+}
+nav .nav-list .nav-logo .logo {
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+nav .nav-list .nav-logo .logo:hover, nav .nav-list .nav-logo .logo:focus {
+  color: rgb(29,169,132);
+  text-shadow: 0 0 3rem rgb(29,169,132);
+}
+nav .nav-list .nav-logo #nav-toggle {
+  display: none;
+}
+nav .nav-list .nav-link {
+  flex-shrink: 0;
+  flex-grow: 0;
+  font-weight: bold;
+  padding: 1.5rem 1.8rem;
+  position: relative;
+  cursor: pointer;
+}
+nav .nav-list .nav-link i {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transition: transform 0.3s;
+}
+nav .nav-list .nav-link:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0.3em;
+  background: rgb(29,169,132);
+  border-radius: 4px;
+  bottom: 1em;
+  left: 1.6em;
+  transition: width 0.3s;
+}
+nav .nav-list .nav-link:hover::after {
+  width: 60%;
+}
+nav .nav-list .nav-link:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+nav .nav-list .nav-link:hover i {
+  transform: rotate(180deg);
+}
+nav .nav-list .nav-link .nav-drop {
+  position: absolute;
+  top: 4rem;
+  box-shadow: 0 4px 16px #e1e5ee;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #e1e5ee;
+  width: 12rem;
+  padding: 0.5rem;
+  margin-left: -1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: 300ms ease-out;
+}
+nav .nav-list .nav-link .nav-drop li {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+nav .nav-list .nav-link .nav-drop li:hover, nav .nav-list .nav-link .nav-drop li:focus {
+  background: rgba(109, 198, 177, 0.2);
+}
+.sign-in-up{
+  gap: 1.3rem;
+}
+nav .btn1 {
+  border: none;
+  outline: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: rgb(255 255 255 / 0%); /* Use the correct variable here */
+  color: black; /* Update text color to a contrasting color */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.1s;
+}
+nav .btn1 .outline {
+  background: inherit;
+  border: 4px solid rgb(24, 21, 22); /* Use the correct variable here */
+}
+
+nav .btn1:hover {
+  background: rgba(29, 169, 132, 0.669); /* Use the correct variable here */
+  color: white; /* Change text color on hover for contrast */
+}
+
+nav .btn1:focus {
+  text-shadow: 0 0 18px black;
+  outline: 4px solid black; /* Use the correct variable here */
+}
+nav .btn1:active {
+  transform: scale(0.98);
+}
+
+nav .btn {
+  border: none;
+  outline: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(14, 199, 150, 0.377);
+  color: black; /* Update text color to a contrasting color */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.1s;
+}
+nav .btn .outline {
+  background: inherit;
+  border: 2px solid rgb(25, 230, 42); /* Use the correct variable here */
+}
+nav .btn:hover {
+  background: rgba(14, 199, 150, 0.854); /* Use the correct variable here */
+  color: white; /* Change text color on hover for contrast */
+}
+nav .btn:focus {
+  text-shadow: 0 0 18px rgb(129, 229, 153);
+  outline: 4px solid rgb(15, 245, 50); /* Use the correct variable here */
+}
+nav .btn:active {
+  transform: scale(0.98);
+}
+
+
+
+/* ========================= RESPONSIVE ========================= */
+/* Always show nav link and items above the break point */
+@media screen and (min-width: 768px) {
+  nav .nav-list .nav-item {
+    display: flex !important;
+  }
+  nav .nav-list .nav-link {
+    display: flex !important;
+  }
+}
+/* Hide nav link and items below the break point and show toggle button */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 1rem 0;
+  }
+  nav .nav-list {
+    display: block;
+  }
+  nav .nav-list .nav-logo #nav-toggle {
+    display: block;
+  }
+  nav .nav-list .nav-link {
+    padding: 1.5rem 0;
+  }
+  nav .nav-list .nav-link i {
+    position: absolute;
+    right: 1rem;
+    top: 1.8rem;
+  }
+  nav .nav-list .nav-link .nav-drop {
+    top: 1rem;
+    box-shadow: unset;
+    width: unset;
+    margin-left: -1rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+  nav .nav-list .nav-link:after {
+    top: 3em;
+    left: 0.08em;
+    transition: width 0.3s;
+  }
+  nav .nav-list .nav-link:hover::after {
+    width: 4em;
+  }
+  nav .nav-list .nav-link:hover ul {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+  }
+}/*# sourceMappingURL=Hmpg.css.map */
+
+.Hpimage{
+  height: 400px;
+  width: 1261px;
+  margin-top: 100px;
+  margin-left: 1px;
+  border-radius: 20px;
+}
+
+/* .page2{
+  padding-top: 0px;
+} */
+
+.page2 .buttonss{
+  display: flex;
+  gap: 20px;
+}
+
+.page2heading{
+  font-family: "YourCustomFont", Helvetica;
+  font-weight: bold;
+}
+
+.b1{
+  background-color: transparent;
+  border: 0;
+  color: #171a1b;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.b1:hover{
+  color: rgb(140,108,19);
+}
+
+.b1:focus{
+  background-color: rgb(237,240,242);
+  color: rgb(21, 22, 23);
+  border-radius: 30rem;
+}
+
+.image-container {
+  position: absolute;
+  width: 200px;
+  height: 200px; /* Adjust the height as needed */
+  transition: left 0.5s;
+
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: px;
+}
+
+/* Set initial position to 0, and hide the images except the first one */
+#first {
+  left: 0;
+}
+
+
+.winimg img {
+  width: 65rem; /* Set a maximum width to maintain aspect ratio */
+  height: auto; /* Let the height adjust to maintain aspect ratio */
+  height: 35rem;
+  border-radius: 30px;
+}
+
+
+.page2{
+  padding-top: 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+#second, #third, #fourth, #fifth {
+  left: 100%;
+  display: none;
+}
+
+/* Set fixed dimensions for the images */
+.image-container img {
+  width: 100%; /* Adjust the width as needed */
+  height: 100%; /* Adjust the height as needed */
+}
+
+
+/* First 2 columns */
+.columncontainer {
+  display: flex;
+  padding-top: 110px;
+  padding-left: 35px;
+  padding-bottom: 20px;
+}
+
+.fcolumn {
+  flex: 1;
+  padding: 70px;
+}
+
+.h1{
+  font-weight: bold;
+}
+
+
+
+
+
+.threecards {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(140, 222, 200);
+}
+
+.cardcontainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px; /* Add padding to the container */
+}
+
+.cardcolumn {
+  width: 30%; /* Adjust the width of each column as needed */
+  /* border-radius: 10px; */
+}
+
+.cardrectangle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+  background-color: white;
+  border: 2px solid rgb(237,240,242); /* Optional: Add a border to the rectangles */
+  border-radius: 20px;
+  box-sizing: border-box; /* Include padding and border in the total width/height */
+  margin: 20px; /* Optional: Add margin to separate the rectangles */
+}
+
+.cardrectangle img{
+  width: 200px;
+}
+
+.review {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.footer-main{
+  padding-top: 90px;
+}
+
+.address-main > div.col-lg-4 {
+  border-bottom: dotted 1px #999;
+}
+.address-box {
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+.add-icon{
+  /* float: left; */
+  width: 60px;
+  display: inline-block;
+  padding: 0px 5px;
+}
+.address-box .add-icon {
+  background: #27303b;
+  height: 75px;
+  line-height: 75px;
+  width: 75px;
+  margin-right: 20px;
+  text-align: center;
+}
+.add-icon img{
+  width: 100%;
+}
+.address-box .add-icon img {
+  max-width: 40px;
+}
+.add-content{
+  padding-left: 70px;
+}
+.add-content h5 {
+  font-size: 17px;
+  color: #ffffff;
+  padding: 0;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.add-content p {
+  font-size: 13px;
+  color: #999999;
+  font-weight: 300;
+}
+.add-content p a{
+  font-size: 14px;
+  color: #999999;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+.add-content p a:hover{
+  color: #ffb32d;
+}
+
+
+
+footer {
+  background-color: rgb(84,97,108);
+  color: #fff;
+  text-align: center;
+  padding: 70px 0px 70px;
+  margin-top: 200px;
+}
+
+.footer-icons {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Increase the size of the icons */
+.footer-icons i {
+  font-size: 25px; /* Adjust the font size as needed */
+  border-radius: 50%;
+}
+
+.icon-button{
+  padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin: 5px;
+  border-radius: 20%;
+  /* border-radius: 2px; */
+}
